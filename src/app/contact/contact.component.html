@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./contact.component.css">
+  <title>Contact</title>
+</head>
+
+<body>
+
+
+
+
+  <!--Section: Contact v.2-->
+  <section class="container">
+    <div class="jumbotron text-center">
+      <h2 class="display-4">Contact !</h2>
+    </div>
+
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5 lead">Avez-vous des questions ? N'hésitez pas à me contacter.</p>
+    <!-- <div *ngIf="submitted" class="lead">
+      <span *ngIf="f.name.valid && f.email.valid && f.message.valid">
+        Bonjour {{registerForm.value.name}}, Votre message a bien été envoyé !
+      </span>
+    </div> -->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+        <form id="contact-form" name="contact-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="name" class="lead form-label">Nom <span>*</span></label>
+                <input type="text" id="name" name="name" class="form-control" formControlName="name"
+                  [ngClass]="{ 'is-invalid': f.name.invalid && submitted}" />
+                <div *ngIf="submitted || f.name.touched" class="invalid-feedback">
+                  <div *ngIf="f.name.errors?.['required']">Ce champs est requis !</div>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="email" class="lead">E-mail <span>*</span></label>
+                <input type="text" id="email" name="email" class="form-control" formControlName="email"
+                  [ngClass]="{ 'is-invalid': f.email.invalid && submitted }">
+
+                <!-- Message d'erreur  -->
+                <div *ngIf="f.email.touched || submitted" class="invalid-feedback">
+                  <span *ngIf=" f.email.errors || f.email.invalid">
+                    Ce champs est requis !
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!--Grid column-->
+
+
+
+            <!--Grid row-->
+
+            <!--Grid row-->
+
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="subject" class="lead">Sujet</label>
+                <input type="text" id="subject" name="subject" class="form-control">
+              </div>
+            </div>
+
+            <!--Grid row-->
+
+            <!--Grid row-->
+
+
+            <!--Grid column-->
+            <div class="row-md-6">
+
+              <div class="md-form">
+                <label for="message" class="lead">Message <span>*</span></label>
+                <textarea type="text" id="message" name="message" rows="2" class="form-control"
+                  formControlName="message" [ngClass]="{ 'is-invalid': f.message.invalid && submitted }">
+                  </textarea>
+              </div>
+              <!-- Message d'erreur  -->
+              <div *ngIf="submitted || f.message.touched">
+                <span *ngIf="f.message.errors && f.message.invalid">
+                  Ce champs est requis !
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!--Grid row-->
+
+          <br />
+          <br />
+          <div class="text-center text-md-left">
+            <button class="btn btn-floating m-1 lead" type="submit">Envoyer !</button>
+          </div>
+        </form>
+
+
+
+
+        <!--Grid column-->
+
+
+      </div>
+      <!--Grid column-->
+      <div class="col-md-3 text-center">
+        <ul class="list-unstyled mb-0">
+          <li><i class="fas fa-map-marker-alt fa-2x"></i>
+            <p class="lead">Rueil Malmaison, 92500, IDF, France</p>
+          </li>
+
+          <li><i class="fas fa-phone mt-4 fa-2x"></i>
+            <p class="lead">06.52.96.02.44</p>
+          </li>
+
+          <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+            <p class="lead">amri.maher@yahoo.com</p>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+    </div>
+
+  </section>
+  <!--Section: Contact v.2-->
+
+
+</body>
+
+</html>
